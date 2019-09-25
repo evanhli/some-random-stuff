@@ -6,6 +6,7 @@ module.exports = {
         "no-multiple-empty-lines": "off",
         "promise/param-names": "off",
         "no-new": "off",
+        "prefer-const": "off",
     },
     "env": {
         "mocha": true,
