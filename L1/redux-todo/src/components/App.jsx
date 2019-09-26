@@ -1,16 +1,35 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+
 import { addTodo } from '../actions';
 import TodoList from './TodoList';
 
-const App = ({ dispatch }) => {
+
+function mapDispatchToProps(dispatch) {
+  return {
+    onAddTodo: (todo) => dispatch(addTodo(todo)),
+  };
+}
+
+const App = ({ onAddTodo }) => {
   const [todoInput, setTodoInput] = useState('');
   // const [noteInput, setNoteInput] = useState('');
 
+  // Suboptimal solution without thunk
+  // Problems with multiple clicks and bad state organization
+  // Also a lot of logic within the UI should be handlerd in the action creator instead
+  // function handleSubmitTodo(e) {
+  //   e.preventDefault();
+  //   dispatch(requestSubmitTodo(todoInput));
+  //   setTimeout(() => {
+  //     dispatch(addTodo(todoInput));
+  //     setTodoInput('');
+  //   }, Math.random() * 1000);
+  // }
+
   function handleSubmitTodo(e) {
     e.preventDefault();
-    dispatch(addTodo(todoInput));
-    setTodoInput('');
+    onAddTodo(todoInput);
   }
 
   function handleTodoInputChange(e) {
@@ -40,4 +59,4 @@ const App = ({ dispatch }) => {
   );
 };
 
-export default connect()(App);
+export default connect(null, mapDispatchToProps)(App);
