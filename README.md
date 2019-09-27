@@ -19,5 +19,6 @@ L2.
 - 3 EPI Chapters
 
 L3.
+- Angular 7 and Vue async TODO apps
 
 
