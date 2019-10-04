@@ -8,7 +8,7 @@ L1.
 - ~~Promise implementation (I didn't really get the full A+ compliant version so I just implemented a small 'usable' bit)~~
 - Redux vs Mobx and how they implement flux differently
 - What the heck is really going on with client-side routing
-- Throw in 2 EPI chapters for kicks
+- ~~Throw in 2 EPI chapters for kicks~~
 
 L2.
 - D3 basics and shortcomings
