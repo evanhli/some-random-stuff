@@ -1,5 +1,9 @@
 module.exports = {
     "extends": "airbnb",
+    "env": {
+        "jest": true,
+        "browser": true,
+    },
     "rules": {
         "arrow-body-style": 0,
         "jsx-quotes": 0,
