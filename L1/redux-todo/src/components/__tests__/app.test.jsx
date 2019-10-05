@@ -42,14 +42,18 @@ test('no empty node creation', () => {
   expect(queryByLabelText('todo-item')).toBeNull();
 });
 
-test('valid todo-list item creation', () => {
+test('valid todo-list item creation', async () => {
+  // Arrange
   const { getByText, getByLabelText } = renderWithRedux(<App />);
   const input = getByLabelText('todo-input');
   const button = getByText('Add TODO');
 
+  // Act
   fireEvent.change(input, { target: { value: 'foobar' } });
   fireEvent.click(button);
 
+  const item = await waitForElement(() => getByLabelText('todo-item'));
+  // Assert
   expect(input.value).toBe('');
-  expect(getByLabelText('todo-item').textContent).toBe('foobar');
+  expect(item.textContent).toBe('foobar');
 });
