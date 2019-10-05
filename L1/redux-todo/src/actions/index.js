@@ -35,13 +35,14 @@ export const addNote = (text) => {
 export const addTodo = (text) => {
   return (dispatch) => {
     dispatch(addTodoStarted());
-    setTimeout(() => {
-      try {
-        if (Math.random() * 10 < 5) throw new Error('something broke');
-        dispatch(addTodoSuccess(text));
-      } catch (error) {
-        dispatch(addTodoFailure(error));
-      }
-    }, Math.random() * 1000);
+    dispatch(addTodoSuccess(text));
+  //   setTimeout(() => {
+  //     try {
+  //       if (Math.random() * 10 < 5) throw new Error('something broke');
+  //       dispatch(addTodoSuccess(text));
+  //     } catch (error) {
+  //       dispatch(addTodoFailure(error));
+  //     }
+  //   }, Math.random() * 1000);
   };
 };

@@ -29,7 +29,10 @@ const App = ({ onAddTodo }) => {
 
   function handleSubmitTodo(e) {
     e.preventDefault();
-    onAddTodo(todoInput);
+    if (todoInput) {
+      onAddTodo(todoInput);
+      setTodoInput('');
+    }
   }
 
   function handleTodoInputChange(e) {
@@ -49,7 +52,7 @@ const App = ({ onAddTodo }) => {
   return (
     <>
       <form action=''>
-        <input type='text' name='todo' onChange={handleTodoInputChange} value={todoInput} />
+        <input type='text' aria-label='todo-input' name='todo' onChange={handleTodoInputChange} value={todoInput} />
         <button type='submit' onClick={handleSubmitTodo}>Add TODO</button>
       </form>
       { /* Probably better to build a generic list component

@@ -1,6 +1,8 @@
 import React from 'react';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+
 
 import { render, fireEvent, waitForElement } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
@@ -8,7 +10,9 @@ import '@testing-library/jest-dom/extend-expect';
 import App from '../App';
 import reducer from '../../reducers';
 
-function renderWithRedux(ui, { initialState, store = createStore(reducer, initialState) } = {}) {
+
+function renderWithRedux(ui,
+  { initialState, store = createStore(reducer, initialState, applyMiddleware(thunk)) } = {}) {
   return {
     ...render(<Provider store={store}>{ui}</Provider>),
     // adding `store` to the returned utilities to allow us
@@ -22,4 +26,30 @@ test('renders', () => {
   const { getByText } = renderWithRedux(<App />);
   expect(getByText('Add TODO') instanceof HTMLElement).toBeTruthy();
   expect(getByText('Add TODO').textContent).toBe('Add TODO');
+});
+
+
+test('sets input', () => {
+  const { getByLabelText } = renderWithRedux(<App />);
+  const input = getByLabelText('todo-input');
+  fireEvent.change(input, { target: { value: 'foo' } });
+  expect(input.value).toBe('foo');
+});
+
+test('no empty node creation', () => {
+  const { getByText, queryByLabelText } = renderWithRedux(<App />);
+  fireEvent.click(getByText('Add TODO'));
+  expect(queryByLabelText('todo-item')).toBeNull();
+});
+
+test('valid todo-list item creation', () => {
+  const { getByText, getByLabelText } = renderWithRedux(<App />);
+  const input = getByLabelText('todo-input');
+  const button = getByText('Add TODO');
+
+  fireEvent.change(input, { target: { value: 'foobar' } });
+  fireEvent.click(button);
+
+  expect(input.value).toBe('');
+  expect(getByLabelText('todo-item').textContent).toBe('foobar');
 });

@@ -846,7 +846,7 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.0":
   version "7.6.2"
   resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/@babel/runtime/-/runtime-7.6.2.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40babel%2Fruntime%2F-%2Fruntime-7.6.2.tgz#c3d6e41b304ef10dcf13777a33e7694ec4a9a6dd"
   integrity sha1-w9bkGzBO8Q3PE3d6M+dpTsSppt0=
@@ -1097,6 +1097,11 @@
   resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40nodelib%2Ffs.stat%2F-%2Ffs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha1-K1o6s/kYzKSKjHVMCBaOPwPrphs=
 
+"@sheerun/mutationobserver-shim@^0.3.2":
+  version "0.3.2"
+  resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/@sheerun/mutationobserver-shim/-/mutationobserver-shim-0.3.2.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40sheerun%2Fmutationobserver-shim%2F-%2Fmutationobserver-shim-0.3.2.tgz#8013f2af54a2b7d735f71560ff360d3a8176a87b"
+  integrity sha1-gBPyr1Sit9c19xVg/zYNOoF2qHs=
+
 "@svgr/babel-plugin-add-jsx-attribute@^4.2.0":
   version "4.2.0"
   resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/@svgr/babel-plugin-add-jsx-attribute/-/babel-plugin-add-jsx-attribute-4.2.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40svgr%2Fbabel-plugin-add-jsx-attribute%2F-%2Fbabel-plugin-add-jsx-attribute-4.2.0.tgz#dadcb6218503532d6884b210e7f3c502caaa44b1"
@@ -1200,6 +1205,42 @@
     "@svgr/plugin-svgo" "^4.3.1"
     loader-utils "^1.2.3"
 
+"@testing-library/dom@^6.3.0":
+  version "6.5.0"
+  resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/@testing-library/dom/-/dom-6.5.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40testing-library%2Fdom%2F-%2Fdom-6.5.0.tgz#9419fec57a544917bd5e398d40826425be50ee0a"
+  integrity sha1-lBn+xXpUSRe9XjmNQIJkJb5Q7go=
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    "@sheerun/mutationobserver-shim" "^0.3.2"
+    "@types/testing-library__dom" "^6.0.0"
+    aria-query "3.0.0"
+    pretty-format "^24.8.0"
+    wait-for-expect "^1.3.0"
+
+"@testing-library/jest-dom@^4.1.0":
+  version "4.1.0"
+  resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/@testing-library/jest-dom/-/jest-dom-4.1.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40testing-library%2Fjest-dom%2F-%2Fjest-dom-4.1.0.tgz#69d372e54e4e33be3fd34f3848ec0e8e9d099276"
+  integrity sha1-adNy5U5OM74/0084SOwOjp0JknY=
+  dependencies:
+    "@babel/runtime" "^7.5.1"
+    chalk "^2.4.1"
+    css "^2.2.3"
+    css.escape "^1.5.1"
+    jest-diff "^24.0.0"
+    jest-matcher-utils "^24.0.0"
+    lodash "^4.17.11"
+    pretty-format "^24.0.0"
+    redent "^3.0.0"
+
+"@testing-library/react@^9.3.0":
+  version "9.3.0"
+  resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/@testing-library/react/-/react-9.3.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40testing-library%2Freact%2F-%2Freact-9.3.0.tgz#1dabf46d1ea018a1c89acecc0e7b86859b34c0f8"
+  integrity sha1-Hav0bR6gGKHIms7MDnuGhZs0wPg=
+  dependencies:
+    "@babel/runtime" "^7.6.0"
+    "@testing-library/dom" "^6.3.0"
+    "@types/testing-library__react" "^9.1.0"
+
 "@types/babel__core@^7.1.0":
   version "7.1.3"
   resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/@types/babel__core/-/babel__core-7.1.3.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40types%2Fbabel__core%2F-%2Fbabel__core-7.1.3.tgz#e441ea7df63cd080dfcd02ab199e6d16a735fc30"
@@ -1263,15 +1304,50 @@
   resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/@types/json-schema/-/json-schema-7.0.3.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40types%2Fjson-schema%2F-%2Fjson-schema-7.0.3.tgz#bdfd69d61e464dcc81b25159c270d75a73c1a636"
   integrity sha1-vf1p1h5GTcyBslFZwnDXWnPBpjY=
 
+"@types/prop-types@*":
+  version "15.7.3"
+  resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/@types/prop-types/-/prop-types-15.7.3.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40types%2Fprop-types%2F-%2Fprop-types-15.7.3.tgz#2ab0d5da2e5815f94b0b9d4b95d1e5f243ab2ca7"
+  integrity sha1-KrDV2i5YFflLC51LldHl8kOrLKc=
+
 "@types/q@^1.5.1":
   version "1.5.2"
   resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/@types/q/-/q-1.5.2.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40types%2Fq%2F-%2Fq-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
   integrity sha1-aQoUdbhPKohP0HzXl8APXzE1bqg=
 
+"@types/react-dom@*":
+  version "16.9.1"
+  resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/@types/react-dom/-/react-dom-16.9.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40types%2Freact-dom%2F-%2Freact-dom-16.9.1.tgz#79206237cba9532a9f870b1cd5428bef6b66378c"
+  integrity sha1-eSBiN8upUyqfhwsc1UKL72tmN4w=
+  dependencies:
+    "@types/react" "*"
+
+"@types/react@*":
+  version "16.9.5"
+  resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/@types/react/-/react-16.9.5.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40types%2Freact%2F-%2Freact-16.9.5.tgz#079dabd918b19b32118c25fd00a786bb6d0d5e51"
+  integrity sha1-B52r2RixmzIRjCX9AKeGu20NXlE=
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
+
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
   resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/@types/stack-utils/-/stack-utils-1.0.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40types%2Fstack-utils%2F-%2Fstack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
   integrity sha1-CoUdO9lkmPolwzq3J47TvWXwbD4=
+
+"@types/testing-library__dom@*", "@types/testing-library__dom@^6.0.0":
+  version "6.5.0"
+  resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/@types/testing-library__dom/-/testing-library__dom-6.5.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40types%2Ftesting-library__dom%2F-%2Ftesting-library__dom-6.5.0.tgz#ae67c9cdac1bb20dd210bbf3decac9da16981f84"
+  integrity sha1-rmfJzawbsg3SELvz3srJ2haYH4Q=
+  dependencies:
+    pretty-format "^24.3.0"
+
+"@types/testing-library__react@^9.1.0":
+  version "9.1.1"
+  resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/@types/testing-library__react/-/testing-library__react-9.1.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2F%40types%2Ftesting-library__react%2F-%2Ftesting-library__react-9.1.1.tgz#4bcb8bba54b07fbb6c084f2f00e7f9410e587c10"
+  integrity sha1-S8uLulSwf7tsCE8vAOf5QQ5YfBA=
+  dependencies:
+    "@types/react-dom" "*"
+    "@types/testing-library__dom" "*"
 
 "@types/yargs-parser@*":
   version "13.1.0"
@@ -1650,7 +1726,7 @@ argparse@^1.0.7:
   dependencies:
     sprintf-js "~1.0.2"
 
-aria-query@^3.0.0:
+aria-query@3.0.0, aria-query@^3.0.0:
   version "3.0.0"
   resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/aria-query/-/aria-query-3.0.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Faria-query%2F-%2Faria-query-3.0.0.tgz#65b3fcc1ca1155a8c9ae64d6eee297f15d5133cc"
   integrity sha1-ZbP8wcoRVajJrmTW7uKX8V1RM8w=
@@ -2900,7 +2976,12 @@ css-what@2.1, css-what@^2.1.2:
   resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/css-what/-/css-what-2.1.3.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fcss-what%2F-%2Fcss-what-2.1.3.tgz#a6d7604573365fe74686c3f311c56513d88285f2"
   integrity sha1-ptdgRXM2X+dGhsPzEcVlE9iChfI=
 
-css@^2.0.0:
+css.escape@^1.5.1:
+  version "1.5.1"
+  resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/css.escape/-/css.escape-1.5.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fcss.escape%2F-%2Fcss.escape-1.5.1.tgz#42e27d4fa04ae32f931a4b4d4191fa9cddee97cb"
+  integrity sha1-QuJ9T6BK4y+TGktNQZH6nN3ul8s=
+
+css@^2.0.0, css@^2.2.3:
   version "2.2.4"
   resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/css/-/css-2.2.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fcss%2F-%2Fcss-2.2.4.tgz#c646755c73971f2bba6a601e2cf2fd71b1298929"
   integrity sha1-xkZ1XHOXHyu6amAeLPL9cbEpiSk=
@@ -3011,6 +3092,11 @@ cssstyle@^1.0.0, cssstyle@^1.1.1:
   integrity sha1-nTEyginTxWXGHlhrAgQaKPzNzPE=
   dependencies:
     cssom "0.3.x"
+
+csstype@^2.2.0:
+  version "2.6.6"
+  resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/csstype/-/csstype-2.6.6.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fcsstype%2F-%2Fcsstype-2.6.6.tgz#c34f8226a94bbb10c32cc0d714afdf942291fc41"
+  integrity sha1-w0+CJqlLuxDDLMDXFK/flCKR/EE=
 
 cyclist@^1.0.1:
   version "1.0.1"
@@ -4773,6 +4859,11 @@ imurmurhash@^0.1.4:
   resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/imurmurhash/-/imurmurhash-0.1.4.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fimurmurhash%2F-%2Fimurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
   integrity sha1-khi5srkoojixPcT7a21XbyMUU+o=
 
+indent-string@^4.0.0:
+  version "4.0.0"
+  resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/indent-string/-/indent-string-4.0.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Findent-string%2F-%2Findent-string-4.0.0.tgz#624f8f4497d619b2d9768531d58f4122854d7251"
+  integrity sha1-Yk+PRJfWGbLZdoUx1Y9BIoVNclE=
+
 indexes-of@^1.0.1:
   version "1.0.1"
   resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/indexes-of/-/indexes-of-1.0.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Findexes-of%2F-%2Findexes-of-1.0.1.tgz#f30f716c8e2bd346c7b67d3df3915566a7c05607"
@@ -5276,7 +5367,7 @@ jest-config@^24.9.0:
     pretty-format "^24.9.0"
     realpath-native "^1.1.0"
 
-jest-diff@^24.9.0:
+jest-diff@^24.0.0, jest-diff@^24.9.0:
   version "24.9.0"
   resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/jest-diff/-/jest-diff-24.9.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fjest-diff%2F-%2Fjest-diff-24.9.0.tgz#931b7d0d5778a1baf7452cb816e325e3724055da"
   integrity sha1-kxt9DVd4obr3RSy4FuMl43JAVdo=
@@ -5390,7 +5481,7 @@ jest-leak-detector@^24.9.0:
     jest-get-type "^24.9.0"
     pretty-format "^24.9.0"
 
-jest-matcher-utils@^24.9.0:
+jest-matcher-utils@^24.0.0, jest-matcher-utils@^24.9.0:
   version "24.9.0"
   resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/jest-matcher-utils/-/jest-matcher-utils-24.9.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fjest-matcher-utils%2F-%2Fjest-matcher-utils-24.9.0.tgz#f5b3661d5e628dffe6dd65251dfdae0e87c3a073"
   integrity sha1-9bNmHV5ijf/m3WUlHf2uDofDoHM=
@@ -6171,6 +6262,11 @@ mimic-fn@^2.0.0:
   version "2.1.0"
   resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/mimic-fn/-/mimic-fn-2.1.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fmimic-fn%2F-%2Fmimic-fn-2.1.0.tgz#7ed2c2ccccaf84d3ffcb7a69b57711fc2083401b"
   integrity sha1-ftLCzMyvhNP/y3pptXcR/CCDQBs=
+
+min-indent@^1.0.0:
+  version "1.0.0"
+  resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/min-indent/-/min-indent-1.0.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fmin-indent%2F-%2Fmin-indent-1.0.0.tgz#cfc45c37e9ec0d8f0a0ec3dd4ef7f7c3abe39256"
+  integrity sha1-z8RcN+nsDY8KDsPdTvf3w6vjklY=
 
 mini-css-extract-plugin@0.8.0:
   version "0.8.0"
@@ -7767,7 +7863,7 @@ pretty-error@^2.1.1:
     renderkid "^2.0.1"
     utila "~0.4"
 
-pretty-format@^24.9.0:
+pretty-format@^24.0.0, pretty-format@^24.3.0, pretty-format@^24.8.0, pretty-format@^24.9.0:
   version "24.9.0"
   resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/pretty-format/-/pretty-format-24.9.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fpretty-format%2F-%2Fpretty-format-24.9.0.tgz#12fac31b37019a4eea3c11aa9a959eb7628aa7c9"
   integrity sha1-EvrDGzcBmk7qPBGqmpWet2KKp8k=
@@ -8204,6 +8300,14 @@ recursive-readdir@2.2.2:
   integrity sha1-mUb7MnThYo3m42svZxSVO0hFCU8=
   dependencies:
     minimatch "3.0.4"
+
+redent@^3.0.0:
+  version "3.0.0"
+  resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/redent/-/redent-3.0.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fredent%2F-%2Fredent-3.0.0.tgz#e557b7998316bb53c9f1f56fa626352c6963059f"
+  integrity sha1-5Ve3mYMWu1PJ8fVvpiY1LGljBZ8=
+  dependencies:
+    indent-string "^4.0.0"
+    strip-indent "^3.0.0"
 
 redux-logger@^3.0.6:
   version "3.0.6"
@@ -9178,6 +9282,13 @@ strip-eof@^1.0.0:
   resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/strip-eof/-/strip-eof-1.0.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fstrip-eof%2F-%2Fstrip-eof-1.0.0.tgz#bb43ff5598a6eb05d89b59fcd129c983313606bf"
   integrity sha1-u0P/VZim6wXYm1n80SnJgzE2Br8=
 
+strip-indent@^3.0.0:
+  version "3.0.0"
+  resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/strip-indent/-/strip-indent-3.0.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fstrip-indent%2F-%2Fstrip-indent-3.0.0.tgz#c32e1cee940b6b3432c771bc2c54bcce73cd3001"
+  integrity sha1-wy4c7pQLazQyx3G8LFS8znPNMAE=
+  dependencies:
+    min-indent "^1.0.0"
+
 strip-json-comments@^3.0.1:
   version "3.0.1"
   resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/strip-json-comments/-/strip-json-comments-3.0.1.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fstrip-json-comments%2F-%2Fstrip-json-comments-3.0.1.tgz#85713975a91fb87bf1b305cca77395e40d2a64a7"
@@ -9741,6 +9852,11 @@ w3c-xmlserializer@^1.1.2:
     domexception "^1.0.1"
     webidl-conversions "^4.0.2"
     xml-name-validator "^3.0.0"
+
+wait-for-expect@^1.3.0:
+  version "1.3.0"
+  resolved "https://na.artifactory.swg-devops.com:443/artifactory/api/npm/omaas-npm-virtual/wait-for-expect/-/wait-for-expect-1.3.0.tgz?dl=https%3A%2F%2Fregistry.npmjs.org%2Fwait-for-expect%2F-%2Fwait-for-expect-1.3.0.tgz#65241ce355425f907f5d127bdb5e72c412ff830c"
+  integrity sha1-ZSQc41VCX5B/XRJ7215yxBL/gww=
 
 walker@^1.0.7, walker@~1.0.5:
   version "1.0.7"
