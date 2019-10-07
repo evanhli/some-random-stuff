@@ -9,8 +9,8 @@ function mapStateToProps(state) {
 const TodoList = ({ todos, status }) => {
   return (
     <ul aria-label='todo-list'>
-      { status === 'error' ? <div>ERROR</div> : null}
-      { status === 'pending' ? <div>LOADING</div> : null}
+      { status === 'error' ? <div aria-label='error-add'>ERROR</div> : null}
+      { status === 'pending' ? <div aria-label='pending-add'>LOADING</div> : null}
       {
         Array.isArray(todos) ? todos.map((todo) => {
           return <li aria-label='todo-item' key={todo.id}>{todo.text}</li>;

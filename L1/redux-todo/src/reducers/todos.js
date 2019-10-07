@@ -1,6 +1,6 @@
 const todos = (state = {}, action) => {
   switch (action.type) {
-    case 'ADD_TODO': {
+    case 'ADD_TODO_SUCCESS': {
       const oldTodos = state.list || [];
       return {
         ...state,

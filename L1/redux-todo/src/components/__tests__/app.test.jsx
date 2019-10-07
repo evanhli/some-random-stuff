@@ -6,10 +6,17 @@ import thunk from 'redux-thunk';
 
 import { render, fireEvent, waitForElement } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-// import axiosMock from 'axios'
 import App from '../App';
 import reducer from '../../reducers';
 
+jest.mock('../../util/request', () => ({
+  postTodos: jest
+    .fn()
+    // Refactor this, poor organization
+    .mockImplementationOnce((todo) => Promise.resolve(todo))
+    .mockImplementationOnce((todo) => Promise.resolve(todo))
+    .mockImplementationOnce(() => Promise.reject(new Error('Failure'))),
+}));
 
 function renderWithRedux(ui,
   { initialState, store = createStore(reducer, initialState, applyMiddleware(thunk)) } = {}) {
@@ -28,11 +35,12 @@ test('renders', () => {
   expect(getByText('Add TODO').textContent).toBe('Add TODO');
 });
 
-
 test('sets input', () => {
   const { getByLabelText } = renderWithRedux(<App />);
   const input = getByLabelText('todo-input');
+
   fireEvent.change(input, { target: { value: 'foo' } });
+
   expect(input.value).toBe('foo');
 });
 
@@ -43,17 +51,38 @@ test('no empty node creation', () => {
 });
 
 test('valid todo-list item creation', async () => {
-  // Arrange
   const { getByText, getByLabelText } = renderWithRedux(<App />);
   const input = getByLabelText('todo-input');
   const button = getByText('Add TODO');
 
-  // Act
   fireEvent.change(input, { target: { value: 'foobar' } });
   fireEvent.click(button);
-
   const item = await waitForElement(() => getByLabelText('todo-item'));
-  // Assert
+
   expect(input.value).toBe('');
   expect(item.textContent).toBe('foobar');
+});
+
+test('loading todo-item creation', async () => {
+  const { getByText, getByLabelText } = renderWithRedux(<App />);
+  const input = getByLabelText('todo-input');
+  const button = getByText('Add TODO');
+
+  fireEvent.change(input, { target: { value: 'foobar' } });
+  fireEvent.click(button);
+  const loading = await waitForElement(() => getByLabelText('pending-add'));
+
+  expect(loading.textContent).toBe('LOADING');
+});
+
+test('failure fetch todo-item creation', async () => {
+  const { getByText, getByLabelText } = renderWithRedux(<App />);
+  const input = getByLabelText('todo-input');
+  const button = getByText('Add TODO');
+
+  fireEvent.change(input, { target: { value: 'foobar' } });
+  fireEvent.click(button);
+  const errorfield = await waitForElement(() => getByLabelText('error-add'));
+
+  expect(errorfield.textContent).toBe('ERROR');
 });
