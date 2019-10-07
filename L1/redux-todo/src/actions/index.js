@@ -1,3 +1,5 @@
+import request from '../util/request';
+
 let id = 0;
 let noteid = 0;
 
@@ -10,7 +12,7 @@ const addTodoStarted = () => {
 const addTodoSuccess = (text) => {
   return {
     id: id++,
-    type: 'ADD_TODO',
+    type: 'ADD_TODO_SUCCESS',
     text,
   };
 };
@@ -35,13 +37,12 @@ export const addNote = (text) => {
 export const addTodo = (text) => {
   return (dispatch) => {
     dispatch(addTodoStarted());
-    setTimeout(() => {
-      try {
-        // if (Math.random() * 10 < ) throw new Error('something broke');
-        dispatch(addTodoSuccess(text));
-      } catch (error) {
+    return request.postTodos(text)
+      .then((res) => {
+        dispatch(addTodoSuccess(res));
+      })
+      .catch((error) => {
         dispatch(addTodoFailure(error));
-      }
-    }, Math.random() * 1000);
+      });
   };
 };
