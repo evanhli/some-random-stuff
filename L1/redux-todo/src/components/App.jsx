@@ -11,7 +11,12 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-const App = ({ onAddTodo }) => {
+
+function mapStateToProps(state) {
+  return { todos: state.todos.list, status: state.todos.status };
+}
+
+const App = ({ onAddTodo, todos, status }) => {
   const [todoInput, setTodoInput] = useState('');
   // const [noteInput, setNoteInput] = useState('');
 
@@ -57,9 +62,9 @@ const App = ({ onAddTodo }) => {
       </form>
       { /* Probably better to build a generic list component
          here, call mapStateToProps in this component and pass in props normally */}
-      <TodoList />
+      <TodoList todos={todos} status={status} />
     </>
   );
 };
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,10 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-
-
-function mapStateToProps(state) {
-  return { todos: state.todos.list, status: state.todos.status };
-}
+import { uniqueId } from 'lodash';
 
 const TodoList = ({ todos, status }) => {
   return (
@@ -13,11 +8,11 @@ const TodoList = ({ todos, status }) => {
       { status === 'pending' ? <div aria-label='pending-add'>LOADING</div> : null}
       {
         Array.isArray(todos) ? todos.map((todo) => {
-          return <li aria-label='todo-item' key={todo.id}>{todo.text}</li>;
+          return <li aria-label='todo-item' key={uniqueId()}>{todo}</li>;
         }) : null
       }
     </ul>
   );
 };
 
-export default connect(mapStateToProps)(TodoList);
+export default TodoList;
