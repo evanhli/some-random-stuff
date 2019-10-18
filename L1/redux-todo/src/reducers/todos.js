@@ -4,11 +4,9 @@ const todos = (state = {}, action) => {
       const oldTodos = state.list || [];
       return {
         ...state,
-        list: [...oldTodos, {
-          id: action.id,
-          type: action.type,
-          text: action.text,
-        }],
+        list: [...oldTodos,
+          action.text
+        ],
         status: 'added',
       };
     }
