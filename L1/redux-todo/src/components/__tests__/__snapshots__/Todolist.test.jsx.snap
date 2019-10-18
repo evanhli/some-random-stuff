@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders an item 1`] = `
+<ul
+  aria-label="todo-list"
+>
+  <li
+    aria-label="todo-item"
+  >
+    abc
+  </li>
+  <li
+    aria-label="todo-item"
+  >
+    def
+  </li>
+  <li
+    aria-label="todo-item"
+  >
+    foo
+  </li>
+  <li
+    aria-label="todo-item"
+  >
+    bar
+  </li>
+</ul>
+`;
